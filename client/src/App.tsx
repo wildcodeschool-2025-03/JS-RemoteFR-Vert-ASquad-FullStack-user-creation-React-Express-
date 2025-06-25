@@ -19,7 +19,15 @@ function App() {
     formState: { errors },
   } = useForm();
 
-  const handleForm = (data) => {
+  type FormData = {
+    firstname: string;
+    lastname: string;
+    email: string;
+    password: string;
+    confirm_password?: string;
+  };
+
+  const handleForm = (data: FormData) => {
     delete data.confirm_password;
 
     toast.success("Bravo c'est tout bête !");
