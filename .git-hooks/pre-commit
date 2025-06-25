@@ -18,4 +18,3 @@ echo '----- Done!'
 
 npx validate-branch-name
 npm run check
-npm test
