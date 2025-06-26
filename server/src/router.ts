@@ -10,4 +10,8 @@ import userRouter from "./routes/user.route";
 
 router.use("/user", userRouter);
 
+import authRouter from "./routes/auth.route";
+
+router.use("/auth", authRouter);
+
 export default router;

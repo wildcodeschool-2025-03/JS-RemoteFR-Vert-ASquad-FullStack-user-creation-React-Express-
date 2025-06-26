@@ -14,6 +14,13 @@ class UserRepository {
 
     return result.insertId as number;
   }
+
+  async readByEmail(email: string) {
+    return await databaseClient.query(
+      "SELECT firstname FROM user WHERE email=?",
+      [email]
+    );
+  }
 }
 
 export default new UserRepository();
