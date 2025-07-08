@@ -1,4 +1,4 @@
-import axios from "axios";
+import client from "../services/client";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router";
 import { toast } from "react-toastify";
@@ -19,10 +19,7 @@ export default function LoginPage() {
 
   const handleForm = async (data: FormDataType) => {
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/login`,
-        data
-      );
+      const response = await client.post(`/auth/login`, data);
 
       console.log(response);
 
@@ -30,7 +27,7 @@ export default function LoginPage() {
         toast.success(
           response.data.message + " Vous allez être redirigé dans 2 secondes"
         );
-        navigate("/");
+        navigate("/connected");
       }, 2000);
     } catch (e: any) {
       console.log(e);

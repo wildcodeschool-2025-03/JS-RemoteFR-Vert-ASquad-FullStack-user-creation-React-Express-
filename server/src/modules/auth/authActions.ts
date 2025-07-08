@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 export const login = (req, res, next) => {
   const { email } = req.body;
 
-  const token = jwt.sign({ email }, process.env.APP_SECRET as string, {
+  const token = jwt.sign({ email, age: 17 }, process.env.APP_SECRET as string, {
     expiresIn: "36h",
   });
 

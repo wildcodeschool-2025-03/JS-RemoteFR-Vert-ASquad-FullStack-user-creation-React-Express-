@@ -21,7 +21,7 @@ const app = express();
 import cors from "cors";
 
 if (process.env.CLIENT_URL != null) {
-  app.use(cors({ origin: [process.env.CLIENT_URL] }));
+  app.use(cors({ origin: [process.env.CLIENT_URL], credentials: true }));
 }
 
 // If you need to allow extra origins, you can add something like this:
@@ -40,6 +40,9 @@ app.use(
 /* ************************************************************************* */
 
 // Request Parsing: Understanding the purpose of this part
+import cookieParser from "cookie-parser";
+
+app.use(cookieParser());
 
 // Request parsing is necessary to extract data sent by the client in an HTTP request.
 // For example to access the body of a POST request.

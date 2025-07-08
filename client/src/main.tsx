@@ -10,6 +10,7 @@ import App from "./App";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import ConnectedPage from "./pages/ConnectedPage";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/connected",
+        element: <ConnectedPage />,
       },
     ],
   },
